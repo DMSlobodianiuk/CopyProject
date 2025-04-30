@@ -2,9 +2,11 @@ import shutil
 import os
 
 def main():
-    # os.system('scp "D:\LFJ\TEST AUTOMATION INTERNSHIP\Tasks\Test1.txt" dms@192.168.229.130:/home/dms/TestsFolder/')
-    command = 'scp '
-    source = input("file to move: ")
+    # os.system('scp "D:\LFJ\TEST AUTOMATION INTERNSHIP\Tasks\Test1.txt" dms@192.168.229.130:/home/dms/TestsFolder/') # копиіюємо лише 1 файл
+    # os.system('scp -r "D:\LFJ\TEST AUTOMATION INTERNSHIP\Tasks" dms@192.168.229.130:/home/dms/TestsFolder/') # копіюємо папку
+    print("Enter file(s) or directory which you want to copy into VM")
+    command = 'scp -r '
+    source = input("objects to move: ")
     command += source
     destination = input("where to move: ")
     command += ' ' + destination
@@ -12,16 +14,17 @@ def main():
     os.system(command)
 
 
-    # destination = os.path.join(destination, os.path.basename(source)) # копіює одразу папку
-
-    # dest = shutil.copytree(source,destination,dirs_exist_ok=True) #копіює файл
 
 
 if __name__ == "__main__":
     main()
 
-C
 
+
+
+# destination = os.path.join(destination, os.path.basename(source)) # копіює одразу папку
+
+# dest = shutil.copytree(source,destination,dirs_exist_ok=True) #копіює файл
 
 # scp "D:\LFJ\TEST AUTOMATION INTERNSHIP\Tasks\Test1.txt" dms@192.168.229.130:/home/dms/
 
